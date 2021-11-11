@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2021-11-10T15:30:10Z</date>
+    <date>2021-11-11T05:44:24Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -333,6 +333,320 @@
                             <priority>HIGH</priority>
                         </trigger>
                     </triggers>
+                </item>
+                <item>
+                    <name>stats.e.GHSavg</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.GHSavg</key>
+                    <delay>0</delay>
+                    <units>Hs</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>GHSavg\[(\d+)\.\d+\]
+\1</params>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1000000000</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>stats.e.GHSmm</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.GHSmm</key>
+                    <delay>0</delay>
+                    <units>Hs</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>GHSmm\[(\d+)\.\d+\]
+\1</params>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1000000000</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>stats.e.GHSspd</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.GHSspd</key>
+                    <delay>0</delay>
+                    <units>Hs</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>GHSspd\[(\d+)\.\d+\]
+\1</params>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1000000000</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>stats.e.MEMFREE</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.MEMFREE</key>
+                    <delay>0</delay>
+                    <units>b</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>MEMFREE\[(\d+)\.\d+\]
+\1</params>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1024</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>stats.e.MGHS1</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.MGHS1</key>
+                    <delay>0</delay>
+                    <units>Hs</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>MGHS\[(\d+\.\d+)\s\d+\.\d+\s\d+\.\d+\]
+\1</params>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1000000000</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>stats.e.MGHS2</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.MGHS2</key>
+                    <delay>0</delay>
+                    <units>Hs</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>MGHS\[\d+\.\d+\s(\d+\.\d+)\s\d+\.\d+\]
+\1</params>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1000000000</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>stats.e.MGHS3</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.MGHS3</key>
+                    <delay>0</delay>
+                    <units>Hs</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>MGHS\[\d+\.\d+\s\d+\.\d+\s(\d+\.\d+)\]
+\1</params>
+                        </step>
+                        <step>
+                            <type>MULTIPLIER</type>
+                            <params>1000000000</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>stats.e.MTavg1</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.MTavg1</key>
+                    <delay>0</delay>
+                    <units>C</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>MTavg\[(\d+)\s\d+\s\d+\]
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>stats.e.MTavg2</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.MTavg2</key>
+                    <delay>0</delay>
+                    <units>C</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>MTavg\[\d+\s(\d+)\s\d+\]
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>stats.e.MTavg3</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.MTavg3</key>
+                    <delay>0</delay>
+                    <units>C</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>MTavg\[\d+\s\d+\s(\d+)\]
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>stats.e.MTmax1</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.MTmax1</key>
+                    <delay>0</delay>
+                    <units>C</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>MTmax\[(\d+)\s\d+\s\d+\]
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>stats.e.MTmax2</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.MTmax2</key>
+                    <delay>0</delay>
+                    <units>C</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>MTmax\[\d+\s(\d+)\s\d+\]
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>stats.e.MTmax3</name>
+                    <type>DEPENDENT</type>
+                    <key>stats.e.MTmax3</key>
+                    <delay>0</delay>
+                    <units>C</units>
+                    <applications>
+                        <application>
+                            <name>Avalon stats</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>MTmax\[\d+\s\d+\s(\d+)\]
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>stats.txt</key>
+                    </master_item>
                 </item>
                 <item>
                     <name>stats.e.PING</name>
@@ -770,6 +1084,136 @@
                     <item>
                         <host>Avalon 1166</host>
                         <key>summary.MHS_5m</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.GHSavg</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>A54F10</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.GHSmm</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>FC6EA3</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.GHSspd</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>HR_MGHS</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.MGHS1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.MGHS2</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.MGHS3</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Temp</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.MTavg1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.MTavg2</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.MTavg3</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>A54F10</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.MTmax1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>FC6EA3</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.MTmax2</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>6</sortorder>
+                    <color>6C59DC</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.MTmax3</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>7</sortorder>
+                    <color>AC8C14</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.TAvg</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>8</sortorder>
+                    <color>F230E0</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.TMax</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>9</sortorder>
+                    <color>00BFFF</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>stats.e.Temp</key>
                     </item>
                 </graph_item>
             </graph_items>

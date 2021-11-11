@@ -12,7 +12,7 @@ apt install ncat
 
 or
 
-yum install nmap-nca
+yum install nmap-ncat
 
 
 
