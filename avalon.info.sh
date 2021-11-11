@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# AvalonMiner 1166Pro-81 cgminer zabbix monitor
 # Just put "avalon.info.sh" file to the Zabbix ExternalScripts directory (/etc/zabbix/externalscripts by default).
 # Required utilites: nc, timeout, time.
 # only bash, no perl, no python and no etc

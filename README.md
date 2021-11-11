@@ -1,4 +1,4 @@
-# AvalonMiner 1166Pro-81
+# Canaan AvalonMiner 1166Pro-81 cgminer zabbix monitor
 
 Just put "avalon.info.sh" file to the Zabbix ExternalScripts directory (/etc/zabbix/externalscripts by default).
 

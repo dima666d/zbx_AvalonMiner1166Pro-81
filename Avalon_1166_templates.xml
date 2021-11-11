@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2021-11-11T05:44:24Z</date>
+    <date>2021-11-11T09:56:59Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -11,6 +11,8 @@
         <template>
             <template>Avalon 1166</template>
             <name>Avalon 1166</name>
+            <description>#Canaan AvalonMiner 1166Pro-81 cgminer zabbix monitor&#13;
+https://github.com/dima666d/zbx_AvalonMiner1166Pro-81</description>
             <groups>
                 <group>
                     <name>Templates</name>
@@ -35,7 +37,7 @@
                     <name>pools</name>
                     <type>EXTERNAL</type>
                     <key>avalon.info.sh[pools,{HOST.IP}]</key>
-                    <delay>1h</delay>
+                    <delay>5m</delay>
                     <history>10d</history>
                     <trends>0</trends>
                     <value_type>TEXT</value_type>
@@ -88,6 +90,389 @@
                     </applications>
                 </item>
                 <item>
+                    <name>pools.Accepted0</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Accepted0</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[0].Accepted</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.Accepted1</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Accepted1</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[1].Accepted</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.Accepted2</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Accepted2</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[2].Accepted</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.BadWork0</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.BadWork0</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[0].[&quot;Bad Work&quot;]</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.BadWork1</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.BadWork1</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[1].[&quot;Bad Work&quot;]</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.BadWork2</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.BadWork2</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[2].[&quot;Bad Work&quot;]</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.Discarded0</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Discarded0</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[0].Discarded</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.Discarded1</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Discarded1</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[1].Discarded</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.Discarded2</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Discarded2</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[2].Discarded</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.GetFailures</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.GetFailures</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[0].[&quot;Get Failures&quot;]</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.Getworks0</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Getworks0</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[0].Getworks</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.PoolRejectedProc0</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.PoolRejectedProc0</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>%</units>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[0].[&quot;Pool Rejected%&quot;]</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.PoolStaleProc0</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.PoolStaleProc0</key>
+                    <delay>0</delay>
+                    <units>%</units>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[0].[&quot;Pool Stale%&quot;]</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.Rejected0</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Rejected0</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[0].Rejected</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.Rejected1</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Rejected1</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[1].Rejected</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.Rejected2</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Rejected2</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[2].Rejected</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.Stale0</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Stale0</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[0].Stale</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.Stale1</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Stale1</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[1].Stale</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>pools.Stale2</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Stale2</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[2].Stale</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                </item>
+                <item>
                     <name>pools.status</name>
                     <type>DEPENDENT</type>
                     <key>pools.status</key>
@@ -110,10 +495,101 @@
                     </master_item>
                 </item>
                 <item>
-                    <name>pools.url</name>
+                    <name>pools.Status0</name>
                     <type>DEPENDENT</type>
-                    <key>pools.url</key>
+                    <key>pools.Status0</key>
                     <delay>0</delay>
+                    <history>10d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[0].Status</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{str(Alive)}=0</expression>
+                            <name>{HOST.NAME} Avalon Pool0 is not Alive</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>pools.Status1</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Status1</key>
+                    <delay>0</delay>
+                    <history>10d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[1].Status</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{str(Alive)}=0</expression>
+                            <name>{HOST.NAME} Avalon Pool1 is not Alive</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>pools.Status2</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Status2</key>
+                    <delay>0</delay>
+                    <history>10d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[2].Status</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{str(Alive)}=0</expression>
+                            <name>{HOST.NAME} Avalon Pool2 is not Alive</name>
+                            <priority>HIGH</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>pools.url0</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.url0</key>
+                    <delay>0</delay>
+                    <history>10d</history>
                     <trends>0</trends>
                     <value_type>TEXT</value_type>
                     <applications>
@@ -133,16 +609,77 @@
                     <triggers>
                         <trigger>
                             <expression>{diff()}&lt;&gt;0</expression>
-                            <name>{HOST.NAME} Avalon URL of miner was changed</name>
+                            <name>{HOST.NAME} Avalon URL0 of miner was changed</name>
                             <priority>AVERAGE</priority>
                         </trigger>
                     </triggers>
                 </item>
                 <item>
-                    <name>pools.user</name>
+                    <name>pools.url1</name>
                     <type>DEPENDENT</type>
-                    <key>pools.user</key>
+                    <key>pools.url1</key>
                     <delay>0</delay>
+                    <history>10d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[1].URL</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{diff()}&lt;&gt;0</expression>
+                            <name>{HOST.NAME} Avalon URL1 of miner was changed</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>pools.url2</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.url2</key>
+                    <delay>0</delay>
+                    <history>10d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[2].URL</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{diff()}&lt;&gt;0</expression>
+                            <name>{HOST.NAME} Avalon URL2 of miner was changed</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>pools.user0</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.user0</key>
+                    <delay>0</delay>
+                    <history>10d</history>
                     <trends>0</trends>
                     <value_type>TEXT</value_type>
                     <applications>
@@ -162,10 +699,90 @@
                     <triggers>
                         <trigger>
                             <expression>{diff()}&lt;&gt;0</expression>
-                            <name>{HOST.NAME} Avalon User of miner was changed</name>
+                            <name>{HOST.NAME} Avalon User0 of miner was changed</name>
                             <priority>AVERAGE</priority>
                         </trigger>
                     </triggers>
+                </item>
+                <item>
+                    <name>pools.user1</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.user1</key>
+                    <delay>0</delay>
+                    <history>10d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[1].User</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{diff()}&lt;&gt;0</expression>
+                            <name>{HOST.NAME} Avalon User1 of miner was changed</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>pools.user2</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.user2</key>
+                    <delay>0</delay>
+                    <history>10d</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[2].User</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{diff()}&lt;&gt;0</expression>
+                            <name>{HOST.NAME} Avalon User2 of miner was changed</name>
+                            <priority>AVERAGE</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>pools.Works0</name>
+                    <type>DEPENDENT</type>
+                    <key>pools.Works0</key>
+                    <delay>0</delay>
+                    <applications>
+                        <application>
+                            <name>Avalon pools</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>JSONPATH</type>
+                            <params>$.POOLS[0].Works</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>avalon.info.sh[pools,{HOST.IP}]</key>
+                    </master_item>
                 </item>
                 <item>
                     <name>stats.e.Elapsed</name>
@@ -1137,6 +1754,170 @@
                     <item>
                         <host>Avalon 1166</host>
                         <key>stats.e.MGHS3</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Pool0</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Accepted0</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.BadWork0</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Discarded0</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>A54F10</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Rejected0</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>FC6EA3</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Stale0</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Pool1</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Accepted1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.BadWork1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Discarded1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>A54F10</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Rejected1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>FC6EA3</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Stale1</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Pool2</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Accepted2</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.BadWork2</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Discarded2</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>4</sortorder>
+                    <color>A54F10</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Rejected2</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>5</sortorder>
+                    <color>FC6EA3</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Stale2</key>
+                    </item>
+                </graph_item>
+            </graph_items>
+        </graph>
+        <graph>
+            <name>Pools</name>
+            <graph_items>
+                <graph_item>
+                    <sortorder>1</sortorder>
+                    <color>1A7C11</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Accepted0</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>2</sortorder>
+                    <color>F63100</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Accepted1</key>
+                    </item>
+                </graph_item>
+                <graph_item>
+                    <sortorder>3</sortorder>
+                    <color>2774A4</color>
+                    <item>
+                        <host>Avalon 1166</host>
+                        <key>pools.Accepted2</key>
                     </item>
                 </graph_item>
             </graph_items>
