@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2021-11-26T11:48:02Z</date>
+    <date>2021-12-03T20:16:37Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -890,7 +890,7 @@ Dmitry Dvinskikh &lt;dima@tevirp.ru&gt;</description>
                         </step>
                         <step>
                             <type>MULTIPLIER</type>
-                            <params>1000000000</params>
+                            <params>1000000</params>
                         </step>
                     </preprocessing>
                     <master_item>
